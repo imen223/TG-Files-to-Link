@@ -47,3 +47,16 @@ async def handle_message(evt: events.NewMessage.Event) -> None:
     await evt.reply(f"Link to download file: {url}")
     log.info(f"Replied with link for {evt.id} to {evt.from_id} in {evt.chat_id}")
     log.debug(f"Link to {evt.id} in {evt.chat_id}: {url}")
+    reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton('📌  Support Group', url='https://t.me/InFoTelGroup'),
+                    InlineKeyboardButton('🔖  Projects Channel', url='https://t.me/TGBotsZ')
+                ],
+                [
+                    InlineKeyboardButton('💡  Source Code', url='https://github.com/TGExplore/Screenshot-Bot'),
+                    InlineKeyboardButton('👨  Master', url='https://t.me/odbots')
+                ]
+            ]
+        )
+    )
